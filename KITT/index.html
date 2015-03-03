@@ -1,40 +1,127 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>K.I.T.T.</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<title>K.I.T.T.</title>
+		<link rel="stylesheet" href="stylesheets/styles.css">
+		<link rel="stylesheet" href="stylesheets/pygment_trac.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="javascripts/respond.js"></script>
+		<!--[if lt IE 9]>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<!--[if lt IE 8]>
+		<link rel="stylesheet" href="stylesheets/ie.css">
+		<![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <section>
-        <div id="title" margin=>
-          <h1><font color="#ff1493">K.I.T.T. plug.dj bot</font></h1>
-          <p></p>
-          <hr>
-<!--           <span class="credits left">Project maintained by <a href="https://github.com/Serkora/plugdjbot">frederik.torve</a></span> -->
-<!--           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span> -->
-        </div>
-
-		<p>Пока что просто <a href="https://serkora.github.io/KITT/files/plugbot.pdf">pdf файлик</a>.</p>
-		<P>Используемый код всегда можно посмотреть <a href="https://github.com/Serkora/plugdjbot/blob/master/plugdjbot.js">тут</a>. Никаких секретов.</p
-		<p><a href="https://2ch.hk/plug/res/2732.html">Тред</a> на 2ch.hk</p>
-      </section>
-
-    </div>
-<!--     [if !IE]><script>fixScale(document);</script><![endif] -->
-    
-  </body>
+	</head>
+	<body>
+		<div class="wrapper">
+			<section>
+				<div id="title" margin=>
+					<h1><font color="#ff1493">K.I.T.T. plug.dj bot</font></h1>
+					<p></p>
+					<hr>
+<!--					 <span class="credits left">Project maintained by <a href="https://github.com/Serkora/plugdjbot">frederik.torve</a></span> -->
+<!--					 <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span> -->
+				</div>
+			</section>
+				<!--		TABS		 -->
+			<div class="tabs">
+			    <ul class="tab-links">
+			        <li class="active"><a href="#tab1">        Updates    </a></li>
+			        <li><a href="#tab2">Commands list</a></li>
+			    </ul>
+			 
+			    <div class="tab-content">
+			        <div id="tab1" class="tab active">
+<!-- 			        	<h3>01/03/2015. Модераторство через чат</h3> -->
+						<p>Пока что просто <a href="https://serkora.github.io/KITT/files/plugbot.pdf">pdf файлик</a>.</p>
+						<P>Используемый код всегда можно посмотреть <a href="https://github.com/Serkora/plugdjbot/blob/master/plugdjbot.js">тут</a>. Никаких секретов.</p
+						<p><a href="https://2ch.hk/plug/res/2732.html">Тред</a> на 2ch.hk</p>
+			        </div>
+			 
+			        <div id="tab2" class="tab">
+			        	<div class="commands" id="command-skip">
+			        		<span class="collapsed">
+			        			<p><font color="ff1493" size=3>!skip (<i>t</i>)</font> — Skip the song (after time <i>t</i>).
+			        			<a href="javascript:void(0)">More</a></p>
+			        		</span>
+			        		<span class="expanded">
+			        			<p><font color="ff1493" size=3>!skip (<i>t</i>)</font> — Skip the song (after time <i>t</i>).
+			        			<a href="javascript:void(0)">Less</a></p>
+			        			<div class="box">
+					        		Bouncers and above can use this command on any track, ordinary users can use it on their own tracks.</br></br>
+					        		<font size=2 color="#ada">
+					        		If <i>t</i> >= 15, then <i>t</i> is assumed to be seconds, otherwise — minutes.</br>
+					        		If <i>t</i> <= 0 or no <i>t</i> provided, then skips instantly.</br>
+			    		    		If <i>t</i> == <i>stop</i>, then cancels the current skip timer.</br>
+			    		    		If <i>t</i> == <i>error</i>, then skips the song and moves the dj to the head of the queue.</br>
+			    		    		If <i>t</i> is not a number (except for the above), nothing happens.</br></br>
+			        				</font>
+				        			<font color="ff1493">!skip 3.25</font> ==> skips the song in 3 minutes and 15 seconds.</br>
+				        			<font color="ff1493">!skip 125</font> ==> skips the song in 2 minutes and 5 seconds.</br>
+				        			<font color="ff1493">!skip</font> ==> skips the song right away.</br>
+				        		</div>
+				        		</br>
+			        		</span>
+			        	</div>
+			        	<div>
+			        		<span class="collapsed">
+			        			<p><font color="ff1493" size=3>!add <i>command response</i></font> — Add a custom bot repsonse.
+			        			<a href="javascript:void(0)">More</a></p>
+			        		</span>
+			        		<span class="expanded">
+			        			<p><font color="ff1493" size=3>!add <i>command response</i></font> — Add a custom bot repsonse.
+			        			<a href="javascript:void(0)">Less</a></p>
+			        			<div class="box">
+				        			Any user can add a command, unless it already exists.</br></br>
+					        		<font size=2 color="#ada">
+					        		<i>command</i> cannot contains spaces.</br>
+					        		<i>command</i> must be unique.</br>
+					        		<i>response</i> cannot start with <b>!</b> or <b>/</b>, except for <b>/me</b>.</br></br>
+					        		</font>
+				    	    		<font color="ff1493">!add hello Greetings, my friends! </font>;<font color="ff1493"> !hello</font> ==> <i>Greetings, my friends!</i></br>
+				    	    	</div>
+				    	    	</br>
+			        		</span>
+			        	</div>
+			        </div>
+			    </div>
+			</div>
+			<script>
+					// TABS JS CODE
+			jQuery(document).ready(function() {
+			    jQuery('.tabs .tab-links a').on('click', function(e)  {
+			        var currentAttrValue = jQuery(this).attr('href');
+			 
+			        // Show/Hide Tabs
+			        jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+			 
+			        // Change/remove current tab to active
+			        jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+			 
+			        e.preventDefault();
+			    });
+			});
+					// COLLAPSE JS CODE
+			var clicktime = null
+			$(document).ready(function() {
+    			$(".expanded").hide();
+    			$(".expanded, .collapsed").mousedown(function(){
+    				clicktime = Date.now()
+    			})
+    			$(".expanded, .collapsed").mouseup(function() {
+    				if (Date.now() - clicktime > 150){return}
+        			$(this).parent().children(".expanded, .collapsed").toggle();
+    			});
+			});
+			</script>
+				<!--		TABS		 -->
+		</div>
+<!--		 [if !IE]><script>fixScale(document);</script><![endif] -->
+		
+	</body>
 </html>
