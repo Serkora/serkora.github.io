@@ -55,11 +55,11 @@
 			        			<div class="box">
 					        		Bouncers and above can use this command on any track, ordinary users can use it on their own tracks.</br></br>
 					        		<font size=2 color="#ada">
-					        		If <i>t</i> >= 15, then <i>t</i> is assumed to be seconds, otherwise — minutes.</br>
-					        		If <i>t</i> <= 0 or no <i>t</i> provided, then skips instantly.</br>
-			    		    		If <i>t</i> == <i>stop</i>, then cancels the current skip timer.</br>
-			    		    		If <i>t</i> == <i>error</i>, then skips the song and moves the dj to the head of the queue.</br>
-			    		    		If <i>t</i> is not a number (except for the above), nothing happens.</br></br>
+					        		If <i>t </i>>= 15, then <i>t </i>is assumed to be seconds, otherwise — minutes.</br>
+					        		If <i>t </i><= 0 or no <i>t </i>provided, then skips instantly.</br>
+			    		    		If <i>t </i>== <i>stop</i>, then cancels the current skip timer.</br>
+			    		    		If <i>t </i>== <i>error</i>, then skips the song and moves the dj to the head of the queue.</br>
+			    		    		If <i>t </i>is not a number (except for the above), nothing happens.</br></br>
 			        				</font>
 				        			<font color="ff1493">!skip 3.25</font> ==> skips the song in 3 minutes and 15 seconds.</br>
 				        			<font color="ff1493">!skip 125</font> ==> skips the song in 2 minutes and 5 seconds.</br>
@@ -79,9 +79,10 @@
 			        			<div class="box">
 				        			Any user can add a command, unless it already exists.</br></br>
 					        		<font size=2 color="#ada">
-					        		<i>command</i> cannot contains spaces.</br>
-					        		<i>command</i> must be unique.</br>
-					        		<i>response</i> cannot start with <b>!</b> or <b>/</b>, except for <b>/me</b>.</br></br>
+					        		<i>command </i>cannot contains spaces.</br>
+					        		<i>command </i>must be unique.</br>
+					        		<i>response </i>cannot start with <b>!</b> or <b>/</b>, except for <b>/me</b>.</br>
+					        		<i>response </i>may contain links and/or emoji</br></br>
 					        		</font>
 				    	    		<font color="ff1493">!add hello Greetings, my friends! </font>;<font color="ff1493"> !hello</font> ==> <i>Greetings, my friends!</i></br>
 				    	    	</div>

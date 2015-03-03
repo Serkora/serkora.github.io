@@ -934,3 +934,10 @@ section #title .credits.right {
         background: linear-gradient(#2a2a29, #1c1c1c);
 /*     } */
 }
+
+::selection {
+	background: #999;
+}
+::-moz-selection {
+	background: #999;
+}
