@@ -82,7 +82,7 @@
 					        		<i>command </i>cannot contains spaces.</br>
 					        		<i>command </i>must be unique.</br>
 					        		<i>response </i>cannot start with <b>!</b> or <b>/</b>, except for <b>/me</b>.</br>
-					        		<i>response </i>may contain links and/or emoji.</br></br>
+					        		<i>response </i>may contain links and/or emoji</br></br>
 					        		</font>
 				    	    		<font color="ff1493">!add hello Greetings, my friends! </font>;<font color="ff1493"> !hello</font> ==> <i>Greetings, my friends!</i></br>
 				    	    	</div>
@@ -108,14 +108,20 @@
 			    });
 			});
 					// COLLAPSE JS CODE
-			var clicktime = null
+// 			var clicktime = nulls
+			var highlight = false
 			$(document).ready(function() {
     			$(".expanded").hide();
     			$(".expanded, .collapsed").mousedown(function(){
-    				clicktime = Date.now()
+//     				clicktime = Date.now()
+					if (window.getSelection().toString()){highlight = true}
+					else {highlight = false}
+					return
     			})
     			$(".expanded, .collapsed").mouseup(function() {
-    				if (Date.now() - clicktime > 150){return}
+//     				if (Date.now() - clicktime > 150){return}
+					if (window.getSelection().toString()){return}
+    				if (highlight){return}
         			$(this).parent().children(".expanded, .collapsed").toggle();
     			});
 			});
