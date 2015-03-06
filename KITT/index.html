@@ -39,7 +39,7 @@
 			        <div id="tab1" class="tab active">
 <!-- 			        	<h3>01/03/2015. Модераторство через чат</h3> -->
 						<p>Пока что просто <a href="https://serkora.github.io/KITT/files/plugbot.pdf">pdf файлик</a>.</p>
-						<P>Используемый код всегда можно посмотреть <a href="https://github.com/Serkora/plugdjbot/blob/master/plugdjbot.js">тут</a>. Никаких секретов.</p
+						<P>Используемый код всегда можно посмотреть <a href="https://github.com/Serkora/plugdjbot/blob/master/plugdjbot.js">тут</a>. Никаких секретов.</p>
 						<p><a href="https://2ch.hk/plug/res/2732.html">Тред</a> на 2ch.hk</p>
 			        </div>
 			 
@@ -82,7 +82,7 @@
 					        		<i>command </i>cannot contains spaces.</br>
 					        		<i>command </i>must be unique.</br>
 					        		<i>response </i>cannot start with <b>!</b> or <b>/</b>, except for <b>/me</b>.</br>
-					        		<i>response </i>may contain links and/or emoji</br></br>
+					        		<i>response </i>may contain links and/or emoji.</br></br>
 					        		</font>
 				    	    		<font color="ff1493">!add hello Greetings, my friends! </font>;<font color="ff1493"> !hello</font> ==> <i>Greetings, my friends!</i></br>
 				    	    	</div>
@@ -108,21 +108,31 @@
 			    });
 			});
 					// COLLAPSE JS CODE
-// 			var clicktime = nulls
 			var highlight = false
 			$(document).ready(function() {
     			$(".expanded").hide();
     			$(".expanded, .collapsed").mousedown(function(){
-//     				clicktime = Date.now()
 					if (window.getSelection().toString()){highlight = true}
 					else {highlight = false}
 					return
     			})
-    			$(".expanded, .collapsed").mouseup(function() {
-//     				if (Date.now() - clicktime > 150){return}
+    			$(".collapsed").mouseup(function() {
 					if (window.getSelection().toString()){return}
     				if (highlight){return}
-        			$(this).parent().children(".expanded, .collapsed").toggle();
+    				$(this).parent().children(".expanded").show()
+    				$(this).parent().children(".collapsed").hide()
+    						// To make only "More/Less" clickable. Need to have separate class.
+// 					$(this).parent().parent().parent().children(".expanded").show()
+// 					$(this).parent().parent().parent().children(".collapsed").hide()
+    			});
+    			$(".expanded").mouseup(function() {
+					if (window.getSelection().toString()){return}
+    				if (highlight){return}
+    				$(this).parent().children(".collapsed").show()
+    				$(this).parent().children(".expanded").hide()
+    						// To make only "More/Less" clickable. Need to have separate class.
+// 					$(this).parent().parent().parent().children(".collapsed").show()
+// 					$(this).parent().parent().parent().children(".expanded").hide()
     			});
 			});
 			</script>
