@@ -570,6 +570,7 @@ h1 {
 
 h2 {
   font-size: 24px;
+  color: #ada
 }
 
 h4, h5, h6 {
@@ -581,7 +582,15 @@ h3 {
   line-height: 24px;
   font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: normal;
-  color: #fff;
+  color: #ff1493;
+}
+
+args {
+  color: #ada
+}
+
+com {
+  color: #ff1493
 }
 
 a {

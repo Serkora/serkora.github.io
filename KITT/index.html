@@ -31,64 +31,74 @@
 				<!--		TABS		 -->
 			<div class="tabs">
 			    <ul class="tab-links">
-			        <li class="active"><a href="#tab1">        Updates    </a></li>
-			        <li><a href="#tab2">Commands list</a></li>
+			        <li class="active"><a href="#tab1" class="tab1">            Blog        </a></li>
+			        <li><a href="#tab2" class="tab2">Bot description</a></li>
 			    </ul>
 			 
 			    <div class="tab-content">
 			        <div id="tab1" class="tab active">
-<!-- 			        	<h3>01/03/2015. Модераторство через чат</h3> -->
-						<p>Пока что просто <a href="https://serkora.github.io/KITT/files/plugbot.pdf">pdf файлик</a>.</p>
-						<P>Используемый код всегда можно посмотреть <a href="https://github.com/Serkora/plugdjbot/blob/master/plugdjbot.js">тут</a>. Никаких секретов.</p>
+			        	<h3>09.03.2015</h3>
+			        	<p>Наконец-то закончил переписывать основную часть кода (принцип обработки сообщений), так что теперь, как говорили админы плага,
+			        	"внедрение новых фич будет происходить гораздо быстрее"! Ну и сайт начинаю заполнять.</p>
+			        	<h3>TEMP</h3>
+						<p>На время заполнения списка команд: <a href="https://serkora.github.io/KITT/files/plugbot.pdf">pdf файлик</a>.</p>
+						<p>Используемый код всегда можно посмотреть <a href="https://github.com/Serkora/plugdjbot/blob/master/plugdjbot.js">тут</a>. Никаких секретов.</p>
 						<p><a href="https://2ch.hk/plug/res/2732.html">Тред</a> на 2ch.hk</p>
 			        </div>
 			 
 			        <div id="tab2" class="tab">
-			        	<div class="commands" id="command-skip">
-			        		<span class="collapsed">
-			        			<p><font color="ff1493" size=3>!skip (<i>t</i>)</font> — Skip the song (after time <i>t</i>).
-			        			<a href="javascript:void(0)">More</a></p>
-			        		</span>
-			        		<span class="expanded">
-			        			<p><font color="ff1493" size=3>!skip (<i>t</i>)</font> — Skip the song (after time <i>t</i>).
-			        			<a href="javascript:void(0)">Less</a></p>
-			        			<div class="box">
-					        		Bouncers and above can use this command on any track, ordinary users can use it on their own tracks.</br></br>
-					        		<font size=2 color="#ada">
-					        		If <i>t </i>>= 15, then <i>t </i>is assumed to be seconds, otherwise — minutes.</br>
-					        		If <i>t </i><= 0 or no <i>t </i>provided, then skips instantly.</br>
-			    		    		If <i>t </i>== <i>stop</i>, then cancels the current skip timer.</br>
-			    		    		If <i>t </i>== <i>error</i>, then skips the song and moves the dj to the head of the queue.</br>
-			    		    		If <i>t </i>is not a number (except for the above), nothing happens.</br></br>
-			        				</font>
-				        			<font color="ff1493">!skip 3.25</font> ==> skips the song in 3 minutes and 15 seconds.</br>
-				        			<font color="ff1493">!skip 125</font> ==> skips the song in 2 minutes and 5 seconds.</br>
-				        			<font color="ff1493">!skip</font> ==> skips the song right away.</br>
-				        		</div>
-				        		</br>
-			        		</span>
+			        	<h2>General Info</h2>
+			        	<p>Бот такой же юзер, как и вы. Только лучше.</br>
+			        	Все аргументы команд вводятся через пробел. Если аргумент написан в скобках, значит он не обязателен для ввода. Менять аргументы местами нельзя.</br>
+						Команды регистронезависимые, но все последующие аргументы — зависимы. За исключением пары случаев.</br>
+			        	Бот старается казаться умным, поэтому сводит все 'особенные' и невидимые символы к тому, что видите и можете ввести вы.
+			        	Если буква выглядит одинаково как на кириллице, так и на латинице — вводите как угодно! Иными словами, забанить киттекса 
+			        	через чат можно введя 'Guerrilla Force', а отправить котика Игорьку — 'LAMIGOR'.</br>
+			        	<p>Используемый код всегда можно посмотреть <a href="https://github.com/Serkora/plugdjbot/blob/master/plugdjbot.js">на гитхабе</a>.</br>
+			        	Экскурсии за кулисы проводятся каждый четверг в 15:00GMT+3.</br>
+			        	<a href="https://2ch.hk/plug/res/2732.html">Тред</a> на 2ch.hk</p>
+			        	</p>
+			        	<h2>Background functions</h2>
+			        	<div class="passive">
+			        	<div><com>Autoskip</com> — Cкип трека при определённом соотношении мехов и вутов.
+			        	<a href="javascript:void(0)" class="collapsed">Подробнее</a>
+			        	<span class="expanded">
+			        		<div class="box">
+				        	<args>Бот скипает при выполнении следующего неравенства: meh ≥ 1.25*woot + ⌊(grey+resident)/5⌋ + 3.</args>
+				        </div></span></div>
+			        	<div><com>DJ Cycle</com> — Выключает цикл при большой очереди. <a href="javascript:void(0)" class="collapsed">Подробнее</a>
+			        	<span class="expanded"><div class="box">
+				        	<args>Если в очереди становится 15 человек — отключает. Как только длина очереди опустится ниже 10 человек — включит обратно. 
+				        	Соответственно, при очереди в [10,14] человек цикл можно быть как включен, так и выключен. Гистерезис тип.</args>
+				        </div></span></div>
+			        	<div><com>Stuck</com> — Скипает зависшие треки. <a href="javascript:void(0)" class="collapsed">Подробнее</a>
+						<span class="expanded"><div class="box">
+			        		<args>Если трек завис, то бот через несколько секунд попробует скипнуть 5 раз. 
+			        		Если не получилось, то на 10 минут эта функция отключается.</args></br>
+						</div></span></div>
+			        	<div><com>Mrazota</com> — Скипает излишне длинные треки. <a href="javascript:void(0)" class="collapsed">Подробнее</a>
+						<span class="expanded"><div class="box">
+							<args>Если трек длится дольше 100 минут и на момент начала трека в очереди есть 2+ человек, то скипнет.</args></br>
+			        	</div></span></div>
+			        	<div><com>Overplayed</com> — Сообщает в чат, если исполнитель/трек недавно играл. <a href="javascript:void(0)" class="collapsed">Подробнее</a>
+						<span class="expanded"><div class="box">
+							<args>"Недавно" — 3 часа для повтора трека и две длины очереди (отводя по 4 минуты на трек)
+							для повтора исполнителя. Иными словами, играйте исполнителей через одного. С часу ночи до 8 утра или при очереди из 3х и меньше
+							человек автоматически отключается.</args></br>
+						</div></span></div>
+			        	<div><com>Autoreconnect</com> — В случае неполадок со связью бот сам перезапустится. <a href="javascript:void(0)" class="collapsed">Подробнее</a>
+						<span class="expanded"><div class="box">
+							<args>Если в чате не было активности последние 5 минут, то будет отправлено проверочное сообщение, которое
+							вы можете заметить в чате. Если оно не отправится или не сможет быть удалено два раза (с интервалом в 5 минут), то произойдёт перезагрузка.
+							Таким образом, максимальное время неактивности бота составляет 10 минут, если проблема не на стороне плага, конечно.</args></br>
+			        	</div></span></div>
 			        	</div>
-			        	<div>
-			        		<span class="collapsed">
-			        			<p><font color="ff1493" size=3>!add <i>command response</i></font> — Add a custom bot repsonse.
-			        			<a href="javascript:void(0)">More</a></p>
-			        		</span>
-			        		<span class="expanded">
-			        			<p><font color="ff1493" size=3>!add <i>command response</i></font> — Add a custom bot repsonse.
-			        			<a href="javascript:void(0)">Less</a></p>
-			        			<div class="box">
-				        			Any user can add a command, unless it already exists.</br></br>
-					        		<font size=2 color="#ada">
-					        		<i>command </i>cannot contain spaces.</br>
-					        		<i>command </i>must be unique.</br>
-					        		<i>response </i>cannot start with <b>!</b> or <b>/</b>, except for <b>/me</b>.</br>
-					        		<i>response </i>may contain links and/or emoji.</br></br>
-					        		</font>
-				    	    		<font color="ff1493">!add hello Greetings, my friends! </font>;<font color="ff1493"> !hello</font> ==> <i>Greetings, my friends!</i></br>
-				    	    	</div>
-				    	    	</br>
-			        		</span>
-			        	</div>
+			        	</br>
+						<h2>Everyone</h2>
+						<h2>Bouncers</h2>
+						<h2>Managers</h2>
+						<h2>Co-hosts</h2>
+						<h2>Chosen ones</h2>
 			        </div>
 			    </div>
 			</div>
@@ -97,7 +107,7 @@
 			jQuery(document).ready(function() {
 			    jQuery('.tabs .tab-links a').on('click', function(e)  {
 			        var currentAttrValue = jQuery(this).attr('href');
-			 
+			 		localStorage.kitttab = "a."+currentAttrValue.slice(1)
 			        // Show/Hide Tabs
 			        jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
 			 
@@ -106,6 +116,7 @@
 			 
 			        e.preventDefault();
 			    });
+			    $(localStorage.kitttab.slice(1)).click()
 			});
 					// COLLAPSE JS CODE
 			var highlight = false
