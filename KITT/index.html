@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<title>K.I.T.T.</title>
+		<title>Паравозик тыр-тыр-тыр</title>
 		<link rel="stylesheet" href="stylesheets/styles.css">
 		<link rel="stylesheet" href="stylesheets/pygment_trac.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -21,7 +21,7 @@
 		<div class="wrapper">
 			<section>
 				<div id="title" margin=>
-					<h1><font color="#ff1493">K.I.T.T. plug.dj bot</font></h1>
+					<h1><font color="#ff1493">K.I.T.T.</font></h1>
 					<p></p>
 					<hr>
 <!--					 <span class="credits left">Project maintained by <a href="https://github.com/Serkora/plugdjbot">frederik.torve</a></span> -->
@@ -53,8 +53,8 @@
 			        <div id="tab2" class="tab">
 			        	<h2>General Info</h2>
 			        	<p>Бот такой же юзер, как и вы. Только лучше.</br>
-			        	Все аргументы команд вводятся через пробел. Если аргумент написан в скобках, значит он не обязателен для ввода. Менять аргументы местами нельзя.</br>
-						Команды регистронезависимые, но все последующие аргументы — зависимы. За исключением пары случаев.</br>
+						Команды регистронезависимые*. Все аргументы команд вводятся через пробел. Если аргумент написан в скобках, значит он не обязателен 
+						для ввода. Менять аргументы местами нельзя.</br>
 			        	Бот старается казаться умным, поэтому сводит все 'особенные' и невидимые символы к тому, что видите и можете ввести вы.
 			        	Если буква выглядит одинаково как на кириллице, так и на латинице — вводите как угодно! Иными словами, забанить киттекса 
 			        	через чат можно введя <i>guerrillaforce</i>, а отправить котика Игорьку — <i>Lамigоr</i>. Теоретически, можно ввести лишь часть ника
@@ -99,7 +99,41 @@
 			        	</div></span></div>
 			        	</div>
 			        	</br>
+			        	<div id="everyone">
 						<h2>Everyone</h2>
+						<div class="commands" id="answering_machine">
+						<div><com>!message</com> / <com>!bugreport (<i>text</i>)</com> — Остановить сообщение на мой автоответчик.
+						<a href="javascript:void(0)" class="collapsed">Подробнее</a>
+						<span class="expanded"><div class="box">
+						Чего не понятно-то?!
+						</div></br></span></div>
+						<div class="commands" id="lastpos">
+						<div><com>!lastpos</com> / <com> !dc (<i>username</i>)</com> — Восстановление в очереди в случае дисконнекта.
+						<a href="javascript:void(0)" class="collapsed">Подробнее</a>
+						<span class="expanded"><div class="box">
+							Команда применима как к себе, так и к другому пользователю. В случае выхода из очереди в списке вы будете находиться от 30 до 60 минут. 
+							Каждый час идёт проверка времени дисконнета всех пользователей в списке, и те, кто находится там более 30 минут, — удаляются.</br>
+							Если место человека в очереди меньше записанного — ничего не произойдёт.</br>
+							Если в течение трёх секунд пользователь не будет подвинут на нужное место (по причине лагов плага, например), то в чат
+							будет отправлено соответствующее сообщение с записанной позицией.</br>
+							Имена обрабатываются кучей замен символов в регэкспах, поэтому имеется некоторая свобода в его написании.</br></br>
+							
+							<args>Если <i>username == "_chat"</i>, то <b>только</b> сообщит в чат записанное место и дату вылета.</args></br></br>
+							
+							<com>!dc</com> ==> Добавит в очередь и подвинет на нужно место <i>вас</i>.</br>
+							<com>!dc felix</com> ==>  Добавит в очередь и подвинет <i>Ｆｅｌｉｘ Ｅｒｍｏｌｏｖ</i>'а</br>
+						</div></br></span></div>
+						<div class="commands" id="lastplayed">
+						<div><com>!lastplayed</com> / <com>!lp</com> — Информация о последнем проигрывании трека.
+						<a href="javascript:void(0)" class="collapsed">Подробнее</a>
+						<span class="expanded"><div class="box">
+						Пока что идёт проверка на совпадение либо id видео, либо исполнителя и названия трека. Поэтому если вы играете парамор по названием
+						<i>ghoticlolita - Paramore (<3 hayley) - ain't it fun [hq] (official video)</i>, то ваши проигрывания с накрутками Gavnuk'а ничего общего
+						иметь не будут.</br></br>
+
+							<args>Ввод чего угодно после команды никак на её выполнение не повляет.</args></br>
+						</div></br></span></div>
+						</br></div>
 						<h2>Bouncers</h2>
 						<h2>Managers</h2>
 						<h2>Co-hosts</h2>
