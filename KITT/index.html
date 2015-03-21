@@ -957,6 +957,7 @@
 					// COLLAPSE JS CODE
 			var highlight = false
 			$(document).ready(function() {
+				window.onerror=function(m,u,l){alert(m+"\n"+u+":"+l)};
 					// TABS
 			    $('.tabs .tab-links a').on('click', function(e)  {
 			        var currentAttrValue = $(this).attr('href');
