@@ -37,6 +37,10 @@
 			 
 			    <div class="tab-content">
 			        <div id="tab1" class="tab active">
+			        	<h3>25.03.2015</h3>
+			        	<p>Добавлена долгожданная связка с ласт.фм! Теперь можно <a href="javascript:void(0)" class="comlink" id="link_tags">!iwanttocycleevenwithdjcycleturnedoff</a>
+			        	или посмотреть <a href="javascript:void(0)" class="comlink" id="link_playcount">!iwanttocycleevenwithdjcycleturnedoff</a> dvachbot'ом играющего исполнителя.
+			        	В последнее время скробблер работает херово, то скроббля, то нет, поэтому в скором времени планирую переделать/сделать этот плагин сам.</p>
 			        	<h3>23.03.2015</h3>
 			        	<p>По просьбе петровалика было добавлено оповещение об отключении цикла при большой очереди.</p>
 			        	<h3>21.03.2015</h3>
@@ -205,6 +209,25 @@
 								<com>!skip 30</com> ==> Скип через 30 секунд.</br>
 								<com>!skip 0.5</com> ==> Скип через 30 секунд.</br>
 								<com>!skip 0.05</com> ==> Мгновенный скип.</br>
+							</div></br></span></div></div>
+							<div class="commands" id="tags">
+							<div><com>!tags (<i>artist</i>)</com> — Теги исполнителя текущего или <i>artist</i>.
+							<a href="javascript:void(0)" class="collapsed">Подробнее</a>
+							<span class="expanded"><div class="box">
+							Если произойдёт ошибка (нет такого исполнителя, например), в чат будет выведен текст ошибки, данный самим ласт.фм'ом. Если у
+							исполнителя просто нет тегов, то об этом будет сообщено.</br></br>
+								
+								<com>!tags</com> ==> Chanson, Russian, Russian chanson, Shanson, Russian gothic.</br>
+								<com>!tags Gramatik</com> ==> Hip-hop, Funk, Downtempo, Chillout, Instrumental hip-hop.</br>
+							</div></br></span></div></div>
+							<div class="commands" id="playcount">
+							<div><com>!playcount (<i>artist</i>)</com> — Количество проигрываний исполнителя.
+							<a href="javascript:void(0)" class="collapsed">Подробнее</a>
+							<span class="expanded"><div class="box">
+							Данные беруться с аккаунта dvachbot на last.fm. Скробблер периодчески отваливается, почему-то.</br></br>
+								
+								<com>!playcount</com> ==> BLVCK CEILING has been played 107 times in this room.</br>
+								<com>!playcount Михаил Круг</com> ==> Михаил Круг has been played 21 times in this room.</br>
 							</div></br></span></div></div>
 							<div class="commands" id="boooring">
 							<div><com>!boooring</com> — Скип длинного трека при нежелании румы его слушать.
